@@ -1,0 +1,2 @@
+# XmRig-injector-v1
+ 

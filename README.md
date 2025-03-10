@@ -33,5 +33,4 @@ For more information about XmRig, visit the [official XmRig GitHub repository](h
 ## How to Run the Program
 To run the program, follow these steps:
 
-1. Run the `injector.bat` file.
-2. Restart your computer.
+Run the `injector.bat` file.

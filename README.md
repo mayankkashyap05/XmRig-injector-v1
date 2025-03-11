@@ -6,14 +6,17 @@ This project is for educational purposes only. The owner of this repository is n
 ## How to Remove the Miner
 To remove the miner from your computer, follow these steps:
 
-1. **Remove `run_hidden.vbs` from the Startup folder:**
+1. **Unhide folders&files using `unhide_folder.ps1`:**
+   - Run `unhide_folder.ps1` with admin privileges.
+   
+2. **Remove `run_hidden.vbs` from the Startup folder:**
    - Press `Win + R` to open the Run dialog.
    - Type `shell:startup` and press Enter.
    - Delete the `run_hidden.vbs` file from the Startup folder.
 
-2. **Restart your computer.**
+3. **Restart your computer.**
 
-3. **Remove the `Chrome` folder from `C:\Program Files`:**
+4. **Remove the `Chrome` folder from `C:\Program Files`:**
    - Navigate to `C:\Program Files`.
    - Delete the `Chrome` folder, which contains all the files related to the miner.
 
@@ -33,5 +36,5 @@ For more information about XmRig, visit the [official XmRig GitHub repository](h
 ## How to Run the Program
 To run the program, follow these steps:
 
-1. Run the `injector.bat` file.
+1. Run the `injector.bat` file with admin privileges.
 2. Uncheck the "Always ask before opening this file" then run.

